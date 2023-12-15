@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.src.Modules.ProductModule.Model.Entities;
 
+[Index("CreatorId", Name = "IX_Products_CreatorId")]
 public class Product
 {
     [Key]
@@ -12,6 +15,7 @@ public class Product
     public required decimal Price { get; set; }
     public required decimal Discount { get; set; }
     public required string Image { get; set; }
+    [NotMapped]
     public required IFormFile FormFile { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }

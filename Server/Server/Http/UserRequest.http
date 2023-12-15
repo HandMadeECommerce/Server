@@ -1,0 +1,23 @@
+﻿@host=https://localhost:7090
+
+
+GET {{host}}/api/user
+
+###
+POST {{host}}/api/user
+Content-Type: application/json
+
+{
+  "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "Email": "john.doe@example.com",
+  "Password": "password123",
+  "CreatedAt": "2023-12-15T21:53:49Z",
+  "UpdatedAt": "2023-12-15T21:53:49Z",
+  "IsActive": true,
+  "IsDeleted": false
+}
+
+###
+GET {{host}}/api/user/3fa85f64-5717-4562-b3fc-2c963f66afa6
